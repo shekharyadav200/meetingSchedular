@@ -1,12 +1,12 @@
 package com.turvo.meetingSchedular;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Meeting {
 private String meetingIdentifier;
 private int numberOfAttendees;
-private Date startTime;
-private Date endTime ;
+private LocalDateTime startTime;
+private LocalDateTime endTime ;
 public String getMeetingIdentifier() {
 	return meetingIdentifier;
 }
@@ -19,16 +19,16 @@ public int getNumberOfAttendees() {
 public void setNumberOfAttendees(int numberOfAttendees) {
 	this.numberOfAttendees = numberOfAttendees;
 }
-public Date getStartTime() {
+public LocalDateTime getStartTime() {
 	return startTime;
 }
-public void setStartTime(Date startTime) {
+public void setStartTime(LocalDateTime startTime) {
 	this.startTime = startTime;
 }
-public Date getEndTime() {
+public LocalDateTime getEndTime() {
 	return endTime;
 }
-public void setEndTime(Date endTime) {
+public void setEndTime(LocalDateTime endTime) {
 	this.endTime = endTime;
 }
 	

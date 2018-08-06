@@ -1,15 +1,35 @@
 package com.turvo.meetingSchedular;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Room {
 	private String roomIdentifier;
 	private int capacity;
-	private Date availableStartTime;
-	private Date availableEndTime;
+	/*@JsonSerialize(using = ToStringSerializer.class)
+	// handles "yyyy-MM-dd" input just fine
+	@JsonDeserialize(using = LocalDateDeserializer.class)*/
+	private LocalDateTime availableStartTime;
+	/*@JsonSerialize(using = ToStringSerializer.class)
+	// handles "yyyy-MM-dd" input just fine
+	@JsonDeserialize(using = LocalDateDeserializer.class)*/
+	private LocalDateTime availableEndTime;
+	@JsonIgnore
+	private List<Slot> slots = new ArrayList<Slot>();
 
 	public String getRoomIdentifier() {
 		return roomIdentifier;
+	}
+
+	public List<Slot> getSlots() {
+		return slots;
+	}
+
+	public void setSlots(List<Slot> slots) {
+		this.slots = slots;
 	}
 
 	public void setRoomIdentifier(String roomIdentifier) {
@@ -24,19 +44,19 @@ public class Room {
 		this.capacity = capacity;
 	}
 
-	public Date getAvailableStartTime() {
+	public LocalDateTime getAvailableStartTime() {
 		return availableStartTime;
 	}
 
-	public void setAvailableStartTime(Date availableStartTime) {
+	public void setAvailableStartTime(LocalDateTime availableStartTime) {
 		this.availableStartTime = availableStartTime;
 	}
 
-	public Date getAvailableEndTime() {
+	public LocalDateTime getAvailableEndTime() {
 		return availableEndTime;
 	}
 
-	public void setAvailableEndTime(Date availableEndTime) {
+	public void setAvailableEndTime(LocalDateTime availableEndTime) {
 		this.availableEndTime = availableEndTime;
 	}
 

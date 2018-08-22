@@ -37,7 +37,6 @@ public class MeetingScheduler {
     public ResponseEntity<List<Meeting>> getMettingByRoomId(@PathVariable("room_id") String room_id){
 		return new ResponseEntity<List<Meeting>>(mettingSchedularService.getScheduledMettingByRoomId(room_id), HttpStatus.OK);
 	}
-    
     @GetMapping("/getMeetingByMettingId/{meeting_id}")
     public ResponseEntity<List<Meeting>> getMettingByMeetingId(@PathVariable("meeting_id") String meeting_id){
 		return new ResponseEntity<List<Meeting>>(mettingSchedularService.getScheduledMettingByRoomId(meeting_id), HttpStatus.OK);
